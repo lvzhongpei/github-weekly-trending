@@ -348,6 +348,7 @@ def render(week, daily, monthly, new_total, new_items, flagged, prev, today, bas
       <tr><td class="micro">star 口径</td><td class="desc">「周增星」为 GitHub 页面披露值，不提供逐日曲线，无法二次核验；「总星」为抓取瞬间值。</td></tr>
       <tr><td class="micro">仿冒判定</td><td class="desc">同一创建日、fork 为 0、星数落在中位数 ±5% 内的仓库达到 5 个及以上，判定为疑似仿冒簇。这是启发式规则，可能误伤真实项目。</td></tr>
       <tr><td class="micro">类别</td><td class="desc">按名称与描述的关键词归类，一个项目只归一类，优先级见源码 CATEGORIES。</td></tr>
+      <tr><td class="micro">简介语言</td><td class="desc">中文简介来自仓库内 <code>data/i18n.json</code>，由人工维护，不是机器翻译；没有条目时回退 GitHub 英文原文。右上角可切换中英文。</td></tr>
       <tr><td class="micro">时效</td><td class="desc">所有数字为抓取瞬间值。同一周内重复抓取会出现小幅差异（例如仿冒簇数量会随刷星持续增长而增加），这是数据在变，不是计算错误。</td></tr>
       <tr><td class="micro">免责</td><td class="desc">star 不等于质量。本页不对任何项目的安全性、合法性、可用性做背书；模拟器、重编译、破解类项目请自行评估法律风险。</td></tr>
     </tbody>
