@@ -26,6 +26,7 @@ index.html                 最新一期（自动生成）
 assets/style.css           全站样式
 scripts/generate.py        生成器（仅标准库）
 archive/                   归档：自动页 + 人工报告
+data/i18n.json             项目中文简介（人工维护，用于中英文切换）
 data/history/*.json        每周快照，用于计算留存率与环比
 data/latest.csv            当周原始数据
 .github/workflows/weekly.yml
@@ -44,6 +45,14 @@ GITHUB_TOKEN=<你的 token> python3 scripts/generate.py
 ```bash
 python3 scripts/generate.py --offline
 ```
+
+## 中英文切换
+
+页面右上角有 `EN / 中文` 按钮，默认中文，选择记在浏览器 localStorage。
+
+- 英文来自 GitHub 仓库的原始 description，永远是最新的。
+- 中文来自 `data/i18n.json`（人工维护，键为 `owner/repo`）。**没有条目时自动回退英文原文**，并弱化为灰色，不会留空。
+- 新增项目想补中文，往 `data/i18n.json` 里加一行即可，无需改代码。
 
 ## 仿冒簇判定
 

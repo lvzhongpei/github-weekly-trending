@@ -173,6 +173,29 @@ def previous_history(today):
 
 # ---------------------------------------------------------------- 渲染
 
+def load_i18n():
+    path = os.path.join(DATA_DIR, "i18n.json")
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, encoding="utf-8") as fh:
+            raw = json.load(fh)
+        return {k: v for k, v in raw.items() if not k.startswith("_") and isinstance(v, str) and v.strip()}
+    except Exception:  # noqa: BLE001
+        return {}
+
+
+def desc_cell(item, i18n):
+    """中文优先；缺译时回退英文原文，并标记 fallback 以便弱化显示。"""
+    en = (item.get("desc") or "").strip() or "—"
+    zh = i18n.get(item["name"])
+    if zh:
+        return ('<span class="i18n zh">%s</span><span class="i18n en">%s</span>'
+                % (esc(zh), esc(en[:160])))
+    return ('<span class="i18n zh fallback">%s</span><span class="i18n en">%s</span>'
+            % (esc(en[:160]), esc(en[:160])))
+
+
 def esc(text):
     return html.escape(str(text), quote=True)
 
@@ -181,7 +204,8 @@ def pct(part, whole):
     return 0.0 if not whole else round(part * 100.0 / whole, 1)
 
 
-def render(week, daily, monthly, new_total, new_items, flagged, prev, today, base="", home="./"):
+def render(week, daily, monthly, new_total, new_items, flagged, prev, today, base="", home="./", i18n=None):
+    i18n = i18n or {}
     weekly = week
     total_gain = sum(x["gain"] for x in weekly)
     top = weekly[0] if weekly else {"gain": 1, "name": "-"}
@@ -218,7 +242,7 @@ def render(week, daily, monthly, new_total, new_items, flagged, prev, today, bas
             '<td class="desc hide-m">%s</td></tr>' % (
                 i, _link(x["name"]), max(1.5, x["gain"] * 100.0 / denom),
                 "{:,}".format(x["gain"]), "{:,}".format(x["total"]),
-                esc(x["lang"]), esc(x["desc"][:110])))
+                esc(x["lang"]), desc_cell(x, i18n)))
 
     new_rows = []
     for i, x in enumerate(clean_new, 1):
@@ -227,7 +251,7 @@ def render(week, daily, monthly, new_total, new_items, flagged, prev, today, bas
             '<td class="r num">%s</td><td class="r num">%s</td>'
             '<td class="r micro hide-m">%s</td><td class="desc hide-m">%s</td></tr>' % (
                 i, _link(x["name"]), "{:,}".format(x["stars"]), "{:,}".format(x["forks"]),
-                esc(x["created"]), esc((x["desc"] or "—")[:110])))
+                esc(x["created"]), desc_cell(x, i18n)))
 
     cat_html = "".join(
         '<tr><td>%s</td><td class="bar-cell"><div class="bar"><i style="width:%.1f%%"></i></div></td>'
@@ -257,8 +281,8 @@ def render(week, daily, monthly, new_total, new_items, flagged, prev, today, bas
 <link rel="stylesheet" href="{base}assets/style.css">
 </head>
 <body>
-<header class="site-head"><a class="brand" href="{home}"><b>GITHUB WEEKLY</b><span>auto-generated</span></a>
-<nav>{archive_nav}<a href="https://github.com/lvzhongpei/github-weekly-trending" target="_blank" rel="noopener">源码</a></nav></header>
+<header class="site-head"><div class="site-head-in"><a class="brand" href="{home}"><b>GITHUB WEEKLY</b><span>auto-generated</span></a>
+<nav>{archive_nav}<a href="https://github.com/lvzhongpei/github-weekly-trending" target="_blank" rel="noopener">源码</a><button class="lang-switch" id="lang-switch" type="button" aria-label="切换中英文">EN</button></nav></div></header>
 <main class="wrap">
 <div class="masthead">
   <div class="kicker">Weekly Brief · {today} · Auto-generated</div>
@@ -331,6 +355,7 @@ def render(week, daily, monthly, new_total, new_items, flagged, prev, today, bas
 </section>
 </main>
 <footer><span>GitHub 本周热榜 · {today}</span><span>由 GitHub Actions 每周一自动生成 · 数据抓取 {stamp}</span></footer>
+<script src="{base}assets/lang.js" defer></script>
 </body>
 </html>
 """.format(
@@ -383,8 +408,8 @@ def rebuild_archive_index(today):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>归档 · GitHub 本周热榜</title><link rel="stylesheet" href="../assets/style.css"></head>
-<body><header class="site-head"><a class="brand" href="../"><b>GITHUB WEEKLY</b><span>archive</span></a>
-<nav><a href="../">最新一期</a></nav></header>
+<body><header class="site-head"><div class="site-head-in"><a class="brand" href="../"><b>GITHUB WEEKLY</b><span>archive</span></a>
+<nav><a href="../">最新一期</a></nav></div></header>
 <main class="wrap"><div class="masthead"><div class="kicker">Archive · %s</div><h1>归档</h1>
 <p class="sub">按时间倒序。含每周自动生成的数据页与人工撰写的深度报告。</p></div>
 <section style="border-top:none;margin-top:0;padding-top:10px"><ul class="archive-list">%s</ul></section>
@@ -422,12 +447,13 @@ def main():
     new_total, new_items = snap["new_total"], snap["new_items"]
     flagged, flagged_names = detect_clusters(new_items)
     prev = previous_history(snap.get("date", today))
+    i18n = load_i18n()
 
     day = snap.get("date", today)
-    page = render(week, daily, monthly, new_total, new_items, flagged, prev, day)
+    page = render(week, daily, monthly, new_total, new_items, flagged, prev, day, i18n=i18n)
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(page)
-    arch = render(week, daily, monthly, new_total, new_items, flagged, prev, day, base="../", home="../")
+    arch = render(week, daily, monthly, new_total, new_items, flagged, prev, day, base="../", home="../", i18n=i18n)
     with open(os.path.join(ARCHIVE_DIR, "%s.html" % day), "w", encoding="utf-8") as fh:
         fh.write(arch)
 
