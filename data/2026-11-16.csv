@@ -1,0 +1,51 @@
+﻿dataset,rank,repo,stars_gained,total_stars,forks,language,created,license,watchers,url,note
+monthly,1,cloudflare/security-audit-skill,43540,73219,4901,JavaScript,2026-06-18,MIT,255,https://github.com/cloudflare/security-audit-skill,多阶段安全审计 skill，产出可机器校验的独立验证结论
+monthly,2,pingdotgg/t3code,33583,61505,11022,TypeScript,2026-02-08,MIT,110,https://github.com/pingdotgg/t3code,从任意电脑或手机远程接管 Claude Code、Codex
+monthly,3,pbakaus/impeccable,29631,110744,6617,Rust,2025-11-16,Apache-2.0,219,https://github.com/pbakaus/impeccable,给 coding agent 的设计词汇表
+monthly,4,Nutlope/hallmark,25448,55488,2978,CSS,2026-04-27,MIT,104,https://github.com/Nutlope/hallmark,反 AI-slop 设计 skill
+monthly,5,heygen-com/hyperframes,20878,84736,7845,TypeScript,2026-03-10,Apache-2.0,203,https://github.com/heygen-com/hyperframes,写 HTML 渲染视频，为 agent 设计
+monthly,6,Leonxlnx/taste-skill,19546,116223,7791,JavaScript,2026-02-19,MIT,300,https://github.com/Leonxlnx/taste-skill,艺术指导 + 参考图 + 浏览器校验
+monthly,7,sherlock-project/sherlock,18371,112469,12989,Python,2018-12-24,MIT,1515,https://github.com/sherlock-project/sherlock,跨社交网络按用户名追踪账号（OSINT）
+monthly,8,HKUDS/DeepTutor,18278,59479,7203,Python,2025-12-28,Apache-2.0,234,https://github.com/HKUDS/DeepTutor,终身个性化 AI 家教
+monthly,9,thedotmack/claude-mem,17038,117367,10193,TypeScript,2025-08-31,Apache-2.0,361,https://github.com/thedotmack/claude-mem,跨会话持久记忆
+monthly,10,anthropics/skills,14332,195346,22962,Python,2025-09-22,-,1190,https://github.com/anthropics/skills,Agent Skills 官方公开仓库
+monthly,11,AgriciDaniel/claude-seo,10672,29707,3741,Python,2026-02-07,MIT,167,https://github.com/AgriciDaniel/claude-seo,26 个子技能 + 19 个子代理的 SEO skill
+monthly,12,Vincentwei1021/video-shotcraft,7937,20050,1872,TypeScript,2026-07-19,Apache-2.0,38,https://github.com/Vincentwei1021/video-shotcraft,AI 视频 skill，124 个镜头配方
+monthly,13,vercel-labs/agent-browser,7545,51609,3608,Rust,2026-01-11,Apache-2.0,113,https://github.com/vercel-labs/agent-browser,面向 AI agent 的浏览器自动化 CLI
+monthly,14,anthropics/knowledge-work-plugins,6417,36179,3997,Python,2026-01-23,Apache-2.0,221,https://github.com/anthropics/knowledge-work-plugins,面向知识工作者的插件集
+weekly,1,meta/astryx,13501,28842,2252,TypeScript,2026-01-09,MIT,100,https://github.com/meta/astryx,可完全定制、agent ready 的设计系统
+weekly,2,sherlock-project/sherlock,10412,112469,12989,Python,2018-12-24,MIT,1515,https://github.com/sherlock-project/sherlock,老项目传播回归
+weekly,3,anthropics/skills,6077,195346,22962,Python,2025-09-22,-,1190,https://github.com/anthropics/skills,官方仓库，稳定增长
+weekly,4,milind-soni/OpenMausBot,5463,23380,3244,TypeScript,2026-08-11,Apache-2.0,55,https://github.com/milind-soni/OpenMausBot,开源 Grok Bot 替身，给 bot 配虚拟机
+weekly,5,google/elephant-goldfish-model,5060,19751,1461,Python,2026-09-13,Apache-2.0,80,https://github.com/google/elephant-goldfish-model,与 agent 一起设计、评审软件
+weekly,6,we-promise/sure,4556,15703,1373,Ruby,2025-07-23,AGPL-3.0,43,https://github.com/we-promise/sure,开源个人财务 App
+weekly,7,ZhuLinsen/daily_stock_analysis,4548,72497,57568,Python,2026-01-10,MIT,284,https://github.com/ZhuLinsen/daily_stock_analysis,LLM 驱动的多市场股票分析（fork/star 79%）
+weekly,8,vercel-labs/agent-browser,4217,51609,3608,Rust,2026-01-11,Apache-2.0,113,https://github.com/vercel-labs/agent-browser,周增占月增 56%，仍在加速
+weekly,9,addyosmani/agent-skills,3889,117940,12340,JavaScript,2026-02-15,MIT,575,https://github.com/addyosmani/agent-skills,生产级工程 skills
+weekly,10,google-deepmind/mujoco,1922,18068,2213,C++,-,-,-,https://github.com/google-deepmind/mujoco,物理仿真器（长期基础设施）
+weekly,11,backnotprop/plannotator,1719,11823,1082,TypeScript,2025-12-28,Apache-2.0,33,https://github.com/backnotprop/plannotator,agent 计划阶段的标注与评审
+new,1,Gathin23/cleanyourtv,58273,58273,7615,Python,2026-10-17,NOASSERTION,-,https://github.com/Gathin23/cleanyourtv,Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.
+new,2,storytold/craft-anything,33720,33720,6810,Rust,2026-10-31,Apache-2.0,-,https://github.com/storytold/craft-anything,"Craft Anything: understand how any software works, and craft your own."
+new,3,ccch1mneyyy/dsh-Go,23744,23744,1121,Dart,2026-10-25,AGPL-3.0,-,https://github.com/ccch1mneyyy/dsh-Go,dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。
+new,4,deepseek-ai/dsh-superagent-prototype,23293,23293,2848,TypeScript,2026-10-31,MIT,-,https://github.com/deepseek-ai/dsh-superagent-prototype,Towards a More Autonomous Agent System
+new,5,Zagitta/gpu-unlock,19718,19718,2048,C,2026-10-18,-,-,https://github.com/Zagitta/gpu-unlock,Your GeForce runs AI at half speed. This fixes it for 20/30/40 series cards. Up to 2× FP16 / BF16 / TF32 tensor throughput
+new,6,heydamir/unslop,16751,16751,971,JavaScript,2026-10-29,CC-BY-4.0,-,https://github.com/heydamir/unslop,"A Claude skill that turns vibecoded, AI-looking UI into a designed interface"
+new,7,pengchujin/aerial-tv,12017,12017,1036,Kotlin,2026-10-20,MIT,-,https://github.com/pengchujin/aerial-tv,"给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。A tvOS-style launcher for Xiaomi, TCL and other China-market TVs."
+new,8,anefzaoui/misterdownloadmanager,10349,10349,850,Rust,2026-10-29,GPL-3.0,-,https://github.com/anefzaoui/misterdownloadmanager,"misterdownloadmanager: The ultimate open-source, clean-room download manager written from scratch in pure Rust for Windows, Mac, and Linux"
+new,9,zortos293/Lichii,9375,9375,1502,C++,2026-10-31,GPL-3.0,-,https://github.com/zortos293/Lichii,VERY experimental Nintendo Switch 2 emulator
+new,10,JuneYaooo/rea-video,9175,9175,1352,Python,2026-10-29,Apache-2.0,-,https://github.com/JuneYaooo/rea-video,"Reverse-engineer any video, shot by shot: filmed, AI-generated or coded, and how to remake it. Breakdowns in the open VIDEO.md format. 逆向一切视频，逐个镜头看是拍的、AI 生成的还是代码做的，再告诉你怎么复刻；拆解结果按 VIDEO.md 格式输出。"
+new,11,l0ng-ai/openidea,9050,9050,829,TypeScript,2026-10-21,Apache-2.0,-,https://github.com/l0ng-ai/openidea,"The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+"
+new,12,Minireel/HGhub,8990,8990,7125,Rust,2026-11-03,NOASSERTION,-,https://github.com/Minireel/HGhub,Plug-in media player
+new,13,janestreet/agent_skills,8969,8969,607,-,2026-11-03,MIT,-,https://github.com/janestreet/agent_skills,Agent skills
+new,14,wangzan101/Mika,8718,8718,1994,Kotlin,2026-10-29,Apache-2.0,-,https://github.com/wangzan101/Mika,An on-device AI agent for Android that operates apps and the web to get things done for you.
+new,15,xiaoyang111222/cn-math-taxonomy,8145,8145,2179,Python,2026-10-18,NOASSERTION,-,https://github.com/xiaoyang111222/cn-math-taxonomy,数学（小学到高中）、英语（三年级到高中）、初中物理的知识图谱：1644 个知识点、2403 条先修边、6723 道题，对齐课标，附自适应前置诊断。
+new,16,rddmwmddr/android-ad-cleaner,8128,8128,706,Python,2026-10-24,MIT,-,https://github.com/rddmwmddr/android-ad-cleaner,关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。
+new,17,Jakeschincariol/day-trader-skill,8018,8018,1919,Python,2026-10-20,MIT,-,https://github.com/Jakeschincariol/day-trader-skill,"11 Claude skills for day trading: scan thousands of charts, track breaking news, time every entry and exit, and replay every outcome before you risk a dollar."
+new,18,unclebob/ub-mode,8000,8000,456,-,2026-10-25,MIT,-,https://github.com/unclebob/ub-mode,
+new,19,ly05010419/MacNativeGames,7873,7873,1170,C,2026-10-17,MIT,-,https://github.com/ly05010419/MacNativeGames,"Play your own Tears of the Kingdom and Breath of the Wild natively on Apple silicon Mac, iPhone and iPad. Not an emulator: the game's ARM64 code runs directly, NVN rebuilt on Metal. Bring your own gam"
+new,20,huamidev/GestaltX,7737,7737,2661,Swift,2026-11-09,GPL-3.0,-,https://github.com/huamidev/GestaltX,"An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups."
+new,21,patch-gg/pixelfx,7584,7584,989,JavaScript,2026-10-30,MIT,-,https://github.com/patch-gg/pixelfx,"244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own."
+new,22,valentderah/totk-pc-recomp,7380,7380,596,C,2026-10-29,MIT,-,https://github.com/valentderah/totk-pc-recomp,"Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows and Linux x86-64, with a Vulkan renderer. Game files not included."
+new,23,anomalyco/rune,7243,7243,286,Rust,2026-10-22,MIT,-,https://github.com/anomalyco/rune,Rune: Native UI framework
+new,24,LNPANDY/NX2Apple,7232,7232,892,Swift,2026-10-20,MIT,-,https://github.com/LNPANDY/NX2Apple,"Play your own Switch games on iPhone/iPad — one-click macOS app, no terminal. | 把 Switch 游戏装进 iPhone：图形界面一键构建，不用命令行。Bring your own game."
+new,25,anhao/ai-pose-gallery-zh,7026,7026,1788,TypeScript,2026-10-27,NOASSERTION,-,https://github.com/anhao/ai-pose-gallery-zh,中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊

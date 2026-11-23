@@ -1,0 +1,98 @@
+{
+ "date": "2026-11-16",
+ "total_gain": 61364,
+ "weekly": [
+  {
+   "name": "meta/astryx",
+   "gain": 13501,
+   "total": 28842,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "sherlock-project/sherlock",
+   "gain": 10412,
+   "total": 112469,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "anthropics/skills",
+   "gain": 6077,
+   "total": 195346,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "milind-soni/OpenMausBot",
+   "gain": 5463,
+   "total": 23380,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "google/elephant-goldfish-model",
+   "gain": 5060,
+   "total": 19751,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "we-promise/sure",
+   "gain": 4556,
+   "total": 15703,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "ZhuLinsen/daily_stock_analysis",
+   "gain": 4548,
+   "total": 72497,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "vercel-labs/agent-browser",
+   "gain": 4217,
+   "total": 51609,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "addyosmani/agent-skills",
+   "gain": 3889,
+   "total": 117940,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "google-deepmind/mujoco",
+   "gain": 1922,
+   "total": 18068,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  },
+  {
+   "name": "backnotprop/plannotator",
+   "gain": 1719,
+   "total": 11823,
+   "forks": 0,
+   "lang": "-",
+   "desc": ""
+  }
+ ],
+ "daily": [],
+ "monthly": [],
+ "flagged": [],
+ "new_total": 864
+}

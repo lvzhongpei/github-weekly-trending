@@ -1,0 +1,503 @@
+{
+ "date": "2026-11-23",
+ "weekly": [
+  {
+   "name": "dream-num/univer",
+   "gain": 6436,
+   "total": 31266,
+   "forks": 2844,
+   "lang": "TypeScript",
+   "desc": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+   "period": "weekly"
+  },
+  {
+   "name": "mvanhorn/last30days-skill",
+   "gain": 4731,
+   "total": 72706,
+   "forks": 6424,
+   "lang": "Python",
+   "desc": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+   "period": "weekly"
+  },
+  {
+   "name": "kajisho5/ffmpeg-skill",
+   "gain": 3748,
+   "total": 9714,
+   "forks": 864,
+   "lang": "Python",
+   "desc": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+   "period": "weekly"
+  },
+  {
+   "name": "alibaba/open-code-review",
+   "gain": 3700,
+   "total": 55415,
+   "forks": 4604,
+   "lang": "Go",
+   "desc": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+   "period": "weekly"
+  },
+  {
+   "name": "meta/astryx",
+   "gain": 3626,
+   "total": 32221,
+   "forks": 2528,
+   "lang": "TypeScript",
+   "desc": "An open source design system that's fully customizable and agent ready",
+   "period": "weekly"
+  },
+  {
+   "name": "ag-ui-protocol/ag-ui",
+   "gain": 3620,
+   "total": 21190,
+   "forks": 2157,
+   "lang": "TypeScript",
+   "desc": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+   "period": "weekly"
+  },
+  {
+   "name": "GoogleChrome/modern-web-guidance-src",
+   "gain": 3575,
+   "total": 10206,
+   "forks": 810,
+   "lang": "TypeScript",
+   "desc": "Keep your coding agent up to date with the latest web best practices",
+   "period": "weekly"
+  },
+  {
+   "name": "backnotprop/plannotator",
+   "gain": 2815,
+   "total": 14428,
+   "forks": 1430,
+   "lang": "TypeScript",
+   "desc": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+   "period": "weekly"
+  },
+  {
+   "name": "google-labs-code/stitch-skills",
+   "gain": 2683,
+   "total": 11915,
+   "forks": 1475,
+   "lang": "TypeScript",
+   "desc": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+   "period": "weekly"
+  },
+  {
+   "name": "tradermonty/claude-trading-skills",
+   "gain": 2616,
+   "total": 7790,
+   "forks": 1496,
+   "lang": "Python",
+   "desc": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+   "period": "weekly"
+  },
+  {
+   "name": "ChromeDevTools/chrome-devtools-mcp",
+   "gain": 2268,
+   "total": 58842,
+   "forks": 4916,
+   "lang": "TypeScript",
+   "desc": "Chrome DevTools for coding agents",
+   "period": "weekly"
+  },
+  {
+   "name": "we-promise/sure",
+   "gain": 1771,
+   "total": 17338,
+   "forks": 1522,
+   "lang": "Ruby",
+   "desc": "The personal finance app for everyone (by everyone)",
+   "period": "weekly"
+  },
+  {
+   "name": "pookjw/HermesEnabler",
+   "gain": 461,
+   "total": 2403,
+   "forks": 200,
+   "lang": "Objective-C",
+   "desc": "Enable Hermès Watch Faces on any Apple Watch devices",
+   "period": "weekly"
+  }
+ ],
+ "daily": [
+  {
+   "name": "elementalsouls/Claude-BugHunter",
+   "gain": 1716,
+   "total": 17789,
+   "forks": 1968,
+   "lang": "Python",
+   "desc": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+   "period": "daily"
+  },
+  {
+   "name": "firecrawl/firecrawl",
+   "gain": 915,
+   "total": 207030,
+   "forks": 10817,
+   "lang": "TypeScript",
+   "desc": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+   "period": "daily"
+  },
+  {
+   "name": "obra/superpowers",
+   "gain": 788,
+   "total": 324161,
+   "forks": 28758,
+   "lang": "Shell",
+   "desc": "An agentic skills framework & software development methodology that works.",
+   "period": "daily"
+  },
+  {
+   "name": "XiaoYouChR/Ghost-Downloader-3",
+   "gain": 701,
+   "total": 15132,
+   "forks": 909,
+   "lang": "Python",
+   "desc": "The only downloader you need. 下载器的集大成者。",
+   "period": "daily"
+  },
+  {
+   "name": "HKUDS/CLI-Anything",
+   "gain": 699,
+   "total": 62776,
+   "forks": 5696,
+   "lang": "Python",
+   "desc": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+   "period": "daily"
+  },
+  {
+   "name": "mvanhorn/last30days-skill",
+   "gain": 668,
+   "total": 72706,
+   "forks": 6424,
+   "lang": "Python",
+   "desc": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+   "period": "daily"
+  },
+  {
+   "name": "zhouxiaoka/autoclip",
+   "gain": 641,
+   "total": 13423,
+   "forks": 2126,
+   "lang": "Python",
+   "desc": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+   "period": "daily"
+  },
+  {
+   "name": "mjmirza/app-store-compliance",
+   "gain": 621,
+   "total": 3977,
+   "forks": 236,
+   "lang": "Shell",
+   "desc": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+   "period": "daily"
+  },
+  {
+   "name": "toeverything/AFFiNE",
+   "gain": 542,
+   "total": 76818,
+   "forks": 5624,
+   "lang": "TypeScript",
+   "desc": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+   "period": "daily"
+  },
+  {
+   "name": "cathrynlavery/diagram-design",
+   "gain": 518,
+   "total": 70293,
+   "forks": 4715,
+   "lang": "HTML",
+   "desc": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+   "period": "daily"
+  },
+  {
+   "name": "google-labs-code/stitch-skills",
+   "gain": 494,
+   "total": 11915,
+   "forks": 1475,
+   "lang": "TypeScript",
+   "desc": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+   "period": "daily"
+  },
+  {
+   "name": "jingyaogong/minimind",
+   "gain": 473,
+   "total": 68640,
+   "forks": 8976,
+   "lang": "Python",
+   "desc": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+   "period": "daily"
+  },
+  {
+   "name": "Tracer-Cloud/opensre",
+   "gain": 399,
+   "total": 14412,
+   "forks": 1965,
+   "lang": "Python",
+   "desc": "The open-source agent for CI/CD reliability.",
+   "period": "daily"
+  },
+  {
+   "name": "cursor/plugins",
+   "gain": 294,
+   "total": 18441,
+   "forks": 2005,
+   "lang": "TypeScript",
+   "desc": "Cursor plugin specification and official plugins",
+   "period": "daily"
+  },
+  {
+   "name": "nginx/nginx",
+   "gain": 163,
+   "total": 32883,
+   "forks": 8382,
+   "lang": "C",
+   "desc": "The official NGINX Open Source repository.",
+   "period": "daily"
+  },
+  {
+   "name": "openvinotoolkit/openvino",
+   "gain": 158,
+   "total": 12090,
+   "forks": 3658,
+   "lang": "C++",
+   "desc": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+   "period": "daily"
+  }
+ ],
+ "monthly": [
+  {
+   "name": "pingdotgg/t3code",
+   "gain": 41514,
+   "total": 71603,
+   "forks": 12120,
+   "lang": "TypeScript",
+   "desc": "The best way to control Claude Code, Codex and more from any computer or phone",
+   "period": "monthly"
+  },
+  {
+   "name": "cloudflare/security-audit-skill",
+   "gain": 39307,
+   "total": 77105,
+   "forks": 5196,
+   "lang": "JavaScript",
+   "desc": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+   "period": "monthly"
+  },
+  {
+   "name": "pbakaus/impeccable",
+   "gain": 30634,
+   "total": 115022,
+   "forks": 6851,
+   "lang": "Rust",
+   "desc": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+   "period": "monthly"
+  },
+  {
+   "name": "Nutlope/hallmark",
+   "gain": 29000,
+   "total": 59521,
+   "forks": 3256,
+   "lang": "CSS",
+   "desc": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+   "period": "monthly"
+  },
+  {
+   "name": "milind-soni/OpenMausBot",
+   "gain": 21485,
+   "total": 26847,
+   "forks": 3831,
+   "lang": "TypeScript",
+   "desc": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+   "period": "monthly"
+  },
+  {
+   "name": "sherlock-project/sherlock",
+   "gain": 21408,
+   "total": 115858,
+   "forks": 13248,
+   "lang": "Python",
+   "desc": "Hunt down social media accounts by username across social networks",
+   "period": "monthly"
+  },
+  {
+   "name": "HKUDS/DeepTutor",
+   "gain": 19718,
+   "total": 61604,
+   "forks": 7429,
+   "lang": "Python",
+   "desc": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/ .",
+   "period": "monthly"
+  },
+  {
+   "name": "heygen-com/hyperframes",
+   "gain": 18847,
+   "total": 88279,
+   "forks": 8215,
+   "lang": "TypeScript",
+   "desc": "Open-source AI video editor: edit your own footage, or create and remake any video with Claude Code, Codex or the free Studio app. Write HTML, render MP4. By HeyGen.",
+   "period": "monthly"
+  },
+  {
+   "name": "thedotmack/claude-mem",
+   "gain": 17416,
+   "total": 119086,
+   "forks": 10347,
+   "lang": "TypeScript",
+   "desc": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+   "period": "monthly"
+  },
+  {
+   "name": "anthropics/skills",
+   "gain": 16473,
+   "total": 199002,
+   "forks": 23289,
+   "lang": "Python",
+   "desc": "Public repository for Agent Skills",
+   "period": "monthly"
+  },
+  {
+   "name": "AgriciDaniel/claude-seo",
+   "gain": 12006,
+   "total": 31651,
+   "forks": 3898,
+   "lang": "Python",
+   "desc": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for live SEO data.",
+   "period": "monthly"
+  },
+  {
+   "name": "elementalsouls/Claude-BugHunter",
+   "gain": 11667,
+   "total": 17789,
+   "forks": 1968,
+   "lang": "Python",
+   "desc": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+   "period": "monthly"
+  },
+  {
+   "name": "vercel-labs/agent-browser",
+   "gain": 9083,
+   "total": 53422,
+   "forks": 3739,
+   "lang": "Rust",
+   "desc": "Browser automation CLI for AI agents",
+   "period": "monthly"
+  },
+  {
+   "name": "kajisho5/ffmpeg-skill",
+   "gain": 7477,
+   "total": 9714,
+   "forks": 864,
+   "lang": "Python",
+   "desc": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+   "period": "monthly"
+  },
+  {
+   "name": "Jakeschincariol/instagram-agent-skill",
+   "gain": 5773,
+   "total": 8298,
+   "forks": 1518,
+   "lang": "Python",
+   "desc": "Thirteen Claude skills that run an Instagram account: Reels off 26 scored hook formulas, a viral research skill, a caption linter, and a humanizer. Free, MIT.",
+   "period": "monthly"
+  },
+  {
+   "name": "backnotprop/plannotator",
+   "gain": 4793,
+   "total": 14428,
+   "forks": 1430,
+   "lang": "TypeScript",
+   "desc": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+   "period": "monthly"
+  },
+  {
+   "name": "google-labs-code/stitch-skills",
+   "gain": 3189,
+   "total": 11915,
+   "forks": 1475,
+   "lang": "TypeScript",
+   "desc": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+   "period": "monthly"
+  }
+ ],
+ "total_gain": 42050,
+ "flagged": [
+  "Snow-clienT-best1/microsoft-excel-vcardconverter-win",
+  "andrewpandey/total-commander-win",
+  "deep-patch-true/synchro-arts-revoice-pro-5-win",
+  "birddebug/cinema-4d-win",
+  "cliblacktech/unreal-5-6-win",
+  "sloweastlab1987/wise-care-365-pro-win",
+  "Mnowak64/iobit-uninstaller-pro-win",
+  "Shortproxy2007/fabfilter-pro-l-2-win",
+  "fernandeslokesh10/figma-desktop-win",
+  "Bagussa998/affinity-designer-2-win",
+  "cacheapp2003/microsoft-office-win",
+  "castro-vivek-31/rhino-8-win",
+  "Scottmauricio/indesign-cc-win",
+  "Juanlabs1989/descript-pro-win",
+  "LongNorth1998/charles-proxy-win",
+  "buildpixelwind/photoshop-win",
+  "monicaellis48/jetbrains-intellij-idea-win",
+  "BhaveshPham/tableau-prep-win",
+  "serkanellis/spire-win",
+  "Mahmoudp06/serato-dj-suite-win",
+  "bo-design8152/filmora-win",
+  "kofistudio/autocad-2026-win",
+  "Polinaagarwal02/native-instruments-komplete-win",
+  "NileshLiu/acrobat-dc-win",
+  "FadiHarris80/fusion-360-win",
+  "aminatapolat/plugin-alliance-mega-bundle-win",
+  "Nilespand/tableau-desktop-win",
+  "michellemurphy2001/affinity-designer-2-win",
+  "Truesand8603/beyond-compare-4-win",
+  "birdsolutions98/v-ray-for-revit-win",
+  "Clientplus1990/streamlabs-desktop-win",
+  "Fadiperez71/substance-painter-win",
+  "Hasanturner/discord-nitro-premium-win",
+  "PatriciaIo/topaz-denoise-ai-win",
+  "G4rdner26/luminar-neo-win",
+  "alexeytarasov8/jetbrains-pycharm-professional-win",
+  "Wojcik1999/rob-run-menu-win",
+  "VINODP86/magix-vegas-win",
+  "blessingc185/advanced-systemcare-pro-win",
+  "kernelbest/kaspersky-premium-win",
+  "pilpay29/izotope-nectar-4-win",
+  "hub-bear-blue/revit-2026-win",
+  "GuzmanJacqueline93/copy-ai-pro-win",
+  "alexandere58/ableton-live-win",
+  "Morriswawan05/elevenlabs-pro-win",
+  "alexeytarasov8/filmora-win",
+  "Jnikitin06/pioneer-dj-rekordbox-win",
+  "Thakur4167/visual-studio-pro-win",
+  "VitalyMukherjee92/lightroom-classic-win",
+  "Chukwudi-code83/driver-easy-pro-win",
+  "andresdeshmukh26/synchro-arts-vocalign-pro-win",
+  "colealina/winrar-7-win",
+  "Nilespand/acronis-true-image-win",
+  "debugdigital677/descript-pro-win",
+  "Link-script-new/notion-win",
+  "Shellsmall/mathway-premium-win",
+  "cachedarknorth54/wolfram-alpha-pro-win",
+  "hendersonbharat/avast-premium-security-win",
+  "deepaksilva/u-he-hive-2-win",
+  "ravi36/superior-drummer-3-win",
+  "Maheshgray68/sublime-text-4-win",
+  "kemal-hidayat/norton-360-deluxe-win",
+  "Tarunwang/fl-studio-win",
+  "cookandrey/driver-genius-pro-win",
+  "aslanabigail/autocad-2026-win",
+  "igwei/topaz-video-ai-win",
+  "CliBranchLong/microsoft-excel-win",
+  "Roagu1lar/autodesk-fusion-360-win",
+  "volkov-ping/camtasia-win",
+  "Aroralayla99/capcut-seedance-win",
+  "LuisDesai/trimble-sketchup-win",
+  "DangNicole50/keyshot-studio-win",
+  "craign03/pioneer-dj-rekordbox-win",
+  "ali-jones-1996/tower-git-win",
+  "ChristinaSidorov/waves-cla-bundle-win",
+  "debraly2005/softube-console-1-win"
+ ],
+ "new_total": 1037
+}

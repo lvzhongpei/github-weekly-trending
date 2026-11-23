@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>GitHub 热门项目周报 · 2026 年第 47 周</title>
+<style>
+  :root{
+    --paper:#FAF9F6; --paper-2:#F4F1EA; --ink:#17181A; --ink-2:#3A3B39;
+    --muted:#6E6A63; --line:#E2DED5; --line-soft:#EDEAE3;
+    --accent:#B3381E; --accent-soft:#F3E4DC; --green:#2C5A4B;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.72;border-top:3px solid var(--ink)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+
+  .masthead{padding:56px 0 0}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:26px}
+  h1{font-size:clamp(36px,5.4vw,62px);line-height:1.06;letter-spacing:-.012em;margin:0 0 18px;font-weight:650}
+  .sub{font-size:clamp(17px,2.1vw,21px);color:var(--ink-2);margin:0 0 32px;max-width:35em;font-weight:380}
+  .sub b{font-weight:600;color:var(--accent)}
+
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--ink);border-bottom:1px solid var(--line)}
+  .kpi > div{padding:16px 18px 18px 0;border-right:1px solid var(--line-soft)}
+  .kpi > div:last-child{border-right:0}
+  .kpi .n{font-family:var(--mono);font-size:29px;letter-spacing:-.02em;display:block;line-height:1.2}
+  .kpi .l{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);display:block;margin-top:7px}
+  .kpi .d{font-family:var(--mono);font-size:11.5px;margin-top:5px;display:block;color:var(--muted)}
+  .kpi .d.dn{color:var(--accent)}
+  .kpi .d.up{color:var(--green)}
+
+  .toc{display:flex;flex-wrap:wrap;gap:6px 20px;padding:18px 0 0;font-family:var(--mono);font-size:11.5px}
+  .toc a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+  .toc a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .hint{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.02em;margin:16px 0 0}
+  .hint span{color:var(--accent)}
+
+  section{padding:56px 0 8px;border-top:1px solid var(--line);margin-top:50px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:10px}
+  .sec-num{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.08em;flex:none}
+  h2{font-size:clamp(22px,2.6vw,28px);margin:0;font-weight:620;letter-spacing:-.01em}
+  .lede{font-size:16.5px;color:var(--muted);max-width:72ch;margin:0 0 28px}
+  h3{font-size:16px;font-weight:620;margin:0 0 6px}
+
+  .findings{margin-top:6px}
+  .finding{display:grid;grid-template-columns:58px 1fr;gap:26px;padding:25px 0;border-top:1px dashed var(--line)}
+  .finding:first-child{border-top:1px solid var(--line)}
+  .finding .no{font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:4px}
+  .finding p{margin:8px 0 0;color:var(--ink-2);font-size:15.5px;max-width:76ch}
+  .finding .chip{display:inline-block;font-family:var(--mono);font-size:11.5px;color:var(--green);background:#EAF0EC;padding:2px 8px;margin-top:10px}
+  .finding .chip.warn{color:var(--accent);background:var(--accent-soft)}
+
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  thead th{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 8px;border-bottom:1.5px solid var(--ink);font-weight:500;white-space:nowrap}
+  tbody td{padding:11px 10px;border-bottom:1px solid var(--line-soft);vertical-align:middle}
+  tbody tr:hover{background:var(--paper-2)}
+  .r{text-align:right}
+  .num{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
+  .proj{font-family:var(--mono);font-size:13px;color:var(--ink);white-space:nowrap}
+  .proj .owner{color:var(--muted)}
+  a.proj,a.proj:visited,a.proj:active{color:var(--ink);text-decoration:underline;text-decoration-style:dotted;text-decoration-color:#CDC6B7;text-decoration-thickness:1px;text-underline-offset:3px;transition:color .15s,text-decoration-color .15s}
+  a.proj:hover{color:var(--accent);text-decoration-style:solid;text-decoration-color:var(--accent)}
+  a.proj:hover .owner{color:var(--accent)}
+  .desc{font-size:13px;color:var(--ink-2);line-height:1.55}
+  .bar-cell{width:18%;min-width:100px}
+  .bar{height:5px;background:#E9E4DA;position:relative;width:100%}
+  .bar i{position:absolute;left:0;top:0;height:100%;background:var(--accent);display:block}
+  .micro{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.02em}
+  .tag{font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--muted);border:1px solid var(--line);padding:1px 5px;white-space:nowrap}
+  .tag.bad{color:var(--accent);border-color:#DDB9AC}
+  .up{color:var(--green)} .dn{color:var(--accent)}
+
+  .rank-list{margin-top:8px;border-top:1.5px solid var(--ink)}
+  .rank{display:grid;grid-template-columns:34px 1fr 128px;gap:16px;padding:15px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+  .rank .i{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+  .rank .name{font-family:var(--mono);font-size:13.5px}
+  .rank .name .owner{color:var(--muted)}
+  .rank .d{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.55}
+  .rank .v{text-align:right;font-family:var(--mono);font-size:14px}
+  .rank .v span{display:block;font-size:10.5px;color:var(--muted);margin-top:3px;letter-spacing:.04em}
+
+  .flow{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:10px}
+  .flow > div{background:var(--paper);padding:22px 24px 24px}
+  .flow h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:500}
+  .flow ul{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:12.5px;line-height:2.05}
+  .flow li .g{color:var(--muted);font-size:11px;margin-left:6px}
+  .flow li.drop{color:#ADA79E;text-decoration:line-through}
+  .flow li.keep{color:var(--green)}
+  .flow li.new{color:var(--accent)}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:10px}
+  .card{background:var(--paper);padding:25px 26px 23px}
+  .card .ct{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .card h3{font-size:17px;margin-bottom:10px}
+  .card p{margin:0 0 12px;font-size:14px;color:var(--ink-2);line-height:1.68}
+  .card .data{font-family:var(--mono);font-size:11.5px;color:var(--green);border-top:1px solid var(--line-soft);padding-top:10px;line-height:1.7}
+  .card .data b{color:var(--ink);font-weight:600}
+
+  .callout{background:#F2EDE3;border-left:3px solid var(--accent);padding:18px 22px;margin:26px 0 8px;font-size:14.5px;color:var(--ink-2)}
+  .callout b{color:var(--ink)}
+  .callout.warn{background:#F7E9E3;border-left-color:#9E2F17}
+  .note{font-size:12.5px;color:var(--muted);line-height:1.7;margin-top:14px}
+
+  .risk{border-top:1px solid var(--line);padding:21px 0;display:grid;grid-template-columns:170px 1fr;gap:26px}
+  .risk .t{font-weight:620;font-size:15px}
+  .risk .t span{display:block;font-family:var(--mono);font-size:10.5px;color:var(--accent);letter-spacing:.1em;margin-top:6px}
+  .risk p{margin:0;font-size:14.5px;color:var(--ink-2)}
+  .risk p + p{margin-top:8px}
+  code{font-family:var(--mono);font-size:12.5px;background:#EDE8DE;padding:1px 5px}
+
+  pre{background:#EFEBE2;border:1px solid var(--line);padding:16px 18px;overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.75;color:var(--ink-2);margin:14px 0}
+  .tbl-scroll{overflow-x:auto}
+  footer{border-top:1.5px solid var(--ink);margin-top:60px;padding:22px 0 72px;font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:820px){
+    .wrap{padding:0 20px}
+    .kpi{grid-template-columns:1fr 1fr}
+    .kpi > div:nth-child(2){border-right:0}
+    .cards,.flow{grid-template-columns:1fr}
+    .finding{grid-template-columns:34px 1fr;gap:14px}
+    .risk{grid-template-columns:1fr;gap:8px}
+    .rank{grid-template-columns:26px 1fr 96px;gap:10px}
+    .bar-cell{display:none}
+    thead th.hide-m{display:none}
+    tbody td.hide-m{display:none}
+  }
+  @media print{
+    @page{margin:16mm 14mm}
+    body{background:#fff;border-top:0}
+    .toc{display:none}
+    a{color:inherit;text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="kicker">GitHub Trending · Weekly Brief · No.02</div>
+  <h1>本周热门项目</h1>
+  <p class="sub">榜单换血 <b>77%</b>：Agent 从「装审美」转向「干正事」，同时有 <b>75 个仿冒仓库</b>混进了高星新项目。</p>
+
+  <div class="kpi">
+    <div><span class="n">42,050</span><span class="l">周榜新增星</span><span class="d dn">↓ 31.5% vs 上周 61,364</span></div>
+    <div><span class="n">13</span><span class="l">周榜项目 / 新上榜 10</span><span class="d">上周 11 项，仅 3 项留存</span></div>
+    <div><span class="n">506</span><span class="l">7 天内破 300★ 的新仓库</span><span class="d">高于 100★ 的共 1,037 个</span></div>
+    <div><span class="n">75</span><span class="l">仿冒仓库（占 14.8%）</span><span class="d dn">同日创建 · 零 fork · 无代码</span></div>
+  </div>
+
+  <p class="hint">项目名带虚线下划线，点击即在新标签页打开对应 GitHub 仓库 <span>↗</span></p>
+
+  <nav class="toc">
+    <a href="#s1">01 核心结论</a>
+    <a href="#s2">02 数据与口径</a>
+    <a href="#s3">03 周榜</a>
+    <a href="#s4">04 新项目</a>
+    <a href="#s5">05 榜单换血</a>
+    <a href="#s6">06 月榜变动</a>
+    <a href="#s7">07 五条主线</a>
+    <a href="#s8">08 仿冒簇</a>
+    <a href="#s9">09 下周观察</a>
+    <a href="#s10">附录</a>
+  </nav>
+</header>
+
+<!-- 01 -->
+<section id="s1">
+  <div class="sec-head"><span class="sec-num">01</span><h2>核心结论</h2></div>
+  <p class="lede">五条判断。数字口径见 02 节，与前一期月报的对比见 05、06 节。</p>
+
+  <div class="findings">
+    <div class="finding">
+      <div class="no">01</div>
+      <div>
+        <h3>本周最大的事件不是谁上榜，而是「榜单失效」</h3>
+        <p>上周周榜的 11 个项目，本周只剩 3 个（plannotator、astryx、sure），留存率 27%。周榜合计新增星从 61,364 掉到 42,050，降幅 31.5%。其中最猛的是上周的头部：astryx 从 13,501 掉到 3,626（−73%），sherlock 从 10,412 直接出榜。热点周期已经压缩到「一周一换」。</p>
+        <span class="chip">留存 3/11 · 周增 −31.5%</span>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="no">02</div>
+      <div>
+        <h3>Agent skill 从「通用能力」切成「职业资格」</h3>
+        <p>本周 5 个 skill 项目合计 16,593 星，全部绑定具体职业动作：跨平台调研（last30days-skill 4,731）、视频剪辑（ffmpeg-skill 3,748）、计划评审（plannotator 2,815）、设计交付（stitch-skills 2,683）、证券交易（claude-trading-skills 2,616）。上周的主题是「给 agent 装审美」，这周换成了「给 agent 发执照」——从改善输出观感，转向接管具体岗位的流程。</p>
+        <span class="chip">16,593 stars / 5 projects / 39.5%</span>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="no">03</div>
+      <div>
+        <h3>大厂开始用官方仓库抢分发，第三方封装被挤压</h3>
+        <p>本周周榜里 5 个项目来自大厂官方：Alibaba（open-code-review 3,700）、Google Chrome（modern-web-guidance-src 3,575、chrome-devtools-mcp 2,268）、Google Labs（stitch-skills 2,683）、Meta（astryx 3,626），合计 15,852 星，占周榜 37.7%。日榜还有 Cursor 官方的 plugins。官方 MCP 与官方 skill 一旦铺开，「帮某个工具写 skill」这类中间商的空间会被快速压缩。</p>
+        <span class="chip">15,852 / 42,050 = 37.7%</span>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="no">04</div>
+      <div>
+        <h3>GTA6 重编译是本周唯一的非 Agent 爆发点，也是风险最高的</h3>
+        <p>Leonida 在 11-20 创建，3 天拿到 14,930 星——把 Xbox 版 GTA6 静态重编译到 PC。同主题还有 Xbox2Windows（1,303）、xbox-emulator（1,310）、americas-recomp（507）。四个项目合计 18,050 星，占新项目前 15 名的 60%。这类项目的传播速度和法律风险成正比：它直接触及发行商的版权与 EULA。</p>
+        <span class="chip">18,050 stars / 4 repos / 3 days</span>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="no">05</div>
+      <div>
+        <h3>「按 star 找新项目」这件事，本周被批量污染</h3>
+        <p>7 天内破 300 星的新仓库共 506 个，其中 75 个是同一批仿冒仓库：全部在 11-21 创建，星数集中在 353–366，fork 全为 0，仓库里只有 README、LICENSE、CHANGELOG 和 docs，描述照抄商业软件（Cinema 4D、InDesign、AutoCAD、Photoshop…）。这是黑帽 SEO 引流，不是开源项目。任何只看 star 的选型流程，都会在这类数据上翻车。</p>
+        <span class="chip warn">75 / 506 = 14.8%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section id="s2">
+  <div class="sec-head"><span class="sec-num">02</span><h2>数据与口径</h2></div>
+  <p class="lede">本周报是上一期月报（10.16—11.16）的续篇，两期使用同一套方法，数字可直接对照。</p>
+
+  <div class="tbl-scroll">
+  <table>
+    <thead><tr><th style="width:140px">数据集</th><th style="width:230px">来源</th><th style="width:80px" class="r">样本</th><th>说明与局限</th></tr></thead>
+    <tbody>
+      <tr><td><b>周榜</b></td><td class="micro">github.com/trending?since=weekly</td><td class="r num">13</td><td class="desc">GitHub 口径的「近 7 天新增 star」，按新增量重排。页面条数不足常见的 25 条，且与月榜存在时间差，故只用于「本周谁在涨」，不用于累计排名。</td></tr>
+      <tr><td><b>日榜</b></td><td class="micro">github.com/trending?since=daily</td><td class="r num">16</td><td class="desc">仅用于识别 24 小时内的突增项目，作为下周的先行指标。</td></tr>
+      <tr><td><b>月榜</b></td><td class="micro">github.com/trending?since=monthly</td><td class="r num">17</td><td class="desc">滚动 30 天窗口。本周窗口已从 10.16—11.16 移到 10.23—11.23，因此「本周月增」与「上周月增」相减不等于真实增量，只能看方向。</td></tr>
+      <tr><td><b>新项目</b></td><td class="micro">api.github.com/search/repositories<br>q=created:&gt;2026-11-16 stars:&gt;100</td><td class="r num">1,037</td><td class="desc">完全可复现。命中 1,037 个仓库（&gt;300 星的有 506 个），按 star 降序取前 15 展示、前 30 存档。</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout">
+    <b>三条读表须知。</b>① 周榜的「新增 star」由 GitHub 计算，不提供逐日曲线，无法二次核验；同一项目跨周对比只看量级。② 月榜是滚动窗口，掉 7 天、进 7 天，<b>某项月增下降不代表它减速</b>，可能只是早期那一周滚出了窗口。③ 8 月以来的 star 通胀仍在继续（见上一期第 08 节），本期新增一条更硬的证据：有人能批量把 75 个空仓库刷到 350+ 星。
+  </div>
+  <p class="note">抓取时间：2026-11-23 08:26 CST。统计区间 2026-11-16 至 11-23。所有星数为抓取瞬间值。</p>
+</section>
+
+<!-- 03 -->
+<section id="s3">
+  <div class="sec-head"><span class="sec-num">03</span><h2>周榜 TOP 13</h2></div>
+  <p class="lede">按 GitHub 披露的近 7 天新增 star 重排。条形满格为 6,436。</p>
+
+  <div class="tbl-scroll">
+  <table>
+    <thead>
+      <tr><th style="width:26px">#</th><th style="width:280px">项目</th><th class="bar-cell">周增星</th><th class="r" style="width:80px">总星</th><th class="r hide-m" style="width:76px">创建</th><th class="hide-m">定位</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num" style="color:var(--muted)">1</td>
+        <td><a class="proj" href="https://github.com/dream-num/univer" target="_blank" rel="noopener">dream-num<span class="owner">/univer</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:100%"></i></div><div class="micro" style="margin-top:5px">6,436</div></td>
+        <td class="r num">31,262</td><td class="r micro hide-m">—</td>
+        <td class="desc hide-m">用 SDK 搭自己的 AI 办公套件：表格、文档、幻灯片</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">2</td>
+        <td><a class="proj" href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">mvanhorn<span class="owner">/last30days-skill</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:73.5%"></i></div><div class="micro" style="margin-top:5px">4,731</div></td>
+        <td class="r num">72,702</td><td class="r micro hide-m">2026-01</td>
+        <td class="desc hide-m">跨 Reddit / X / YouTube / HN / Polymarket 的调研 skill</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">3</td>
+        <td><a class="proj" href="https://github.com/kajisho5/ffmpeg-skill" target="_blank" rel="noopener">kajisho5<span class="owner">/ffmpeg-skill</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:58.2%"></i></div><div class="micro" style="margin-top:5px">3,748</div></td>
+        <td class="r num">9,711</td><td class="r micro hide-m">—</td>
+        <td class="desc hide-m">给 coding agent 的本地视频编辑器，42 个 FFmpeg 工具</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">4</td>
+        <td><a class="proj" href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">alibaba<span class="owner">/open-code-review</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:57.5%"></i></div><div class="micro" style="margin-top:5px">3,700</div></td>
+        <td class="r num">55,413</td><td class="r micro hide-m">2026-05</td>
+        <td class="desc hide-m">阿里规模的代码审查系统，Go 实现，支持仓库级上下文</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">5</td>
+        <td><a class="proj" href="https://github.com/meta/astryx" target="_blank" rel="noopener">meta<span class="owner">/astryx</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:56.3%"></i></div><div class="micro" style="margin-top:5px">3,626</div></td>
+        <td class="r num">32,218</td><td class="r micro hide-m">2026-01</td>
+        <td class="desc hide-m">可完全定制、agent ready 的设计系统（上周 13,501）</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">6</td>
+        <td><a class="proj" href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener">ag-ui-protocol<span class="owner">/ag-ui</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:56.2%"></i></div><div class="micro" style="margin-top:5px">3,620</div></td>
+        <td class="r num">21,187</td><td class="r micro hide-m">2025-05</td>
+        <td class="desc hide-m">Agent-User Interaction Protocol：把 agent 接进前端</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">7</td>
+        <td><a class="proj" href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank" rel="noopener">GoogleChrome<span class="owner">/modern-web-guidance-src</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:55.5%"></i></div><div class="micro" style="margin-top:5px">3,575</div></td>
+        <td class="r num">10,205</td><td class="r micro hide-m">2026-01</td>
+        <td class="desc hide-m">让 coding agent 跟上最新 Web 最佳实践</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">8</td>
+        <td><a class="proj" href="https://github.com/backnotprop/plannotator" target="_blank" rel="noopener">backnotprop<span class="owner">/plannotator</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:43.7%"></i></div><div class="micro" style="margin-top:5px">2,815</div></td>
+        <td class="r num">14,425</td><td class="r micro hide-m">2025-12</td>
+        <td class="desc hide-m">在计划阶段介入：标注、评审、一键把反馈回传给 agent</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">9</td>
+        <td><a class="proj" href="https://github.com/google-labs-code/stitch-skills" target="_blank" rel="noopener">google-labs-code<span class="owner">/stitch-skills</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:41.7%"></i></div><div class="micro" style="margin-top:5px">2,683</div></td>
+        <td class="r num">11,913</td><td class="r micro hide-m">2026-01</td>
+        <td class="desc hide-m">配合 Stitch MCP server 的 Agent Skills 库</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">10</td>
+        <td><a class="proj" href="https://github.com/tradermonty/claude-trading-skills" target="_blank" rel="noopener">tradermonty<span class="owner">/claude-trading-skills</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:40.6%"></i></div><div class="micro" style="margin-top:5px">2,616</div></td>
+        <td class="r num">7,788</td><td class="r micro hide-m">2025-10</td>
+        <td class="desc hide-m">面向股票投资者的 Claude skills：行情、技术面、基本面</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">11</td>
+        <td><a class="proj" href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener">ChromeDevTools<span class="owner">/chrome-devtools-mcp</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:35.2%"></i></div><div class="micro" style="margin-top:5px">2,268</div></td>
+        <td class="r num">58,840</td><td class="r micro hide-m">2025-09</td>
+        <td class="desc hide-m">把 Chrome DevTools 暴露给 coding agent</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">12</td>
+        <td><a class="proj" href="https://github.com/we-promise/sure" target="_blank" rel="noopener">we-promise<span class="owner">/sure</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:27.5%"></i></div><div class="micro" style="margin-top:5px">1,771</div></td>
+        <td class="r num">17,337</td><td class="r micro hide-m">2025-07</td>
+        <td class="desc hide-m">开源个人财务 App，Ruby。非 AI 赛道唯一稳居榜内的项目</td>
+      </tr>
+      <tr>
+        <td class="num" style="color:var(--muted)">13</td>
+        <td><a class="proj" href="https://github.com/pookjw/HermesEnabler" target="_blank" rel="noopener">pookjw<span class="owner">/HermesEnabler</span></a></td>
+        <td class="bar-cell"><div class="bar"><i style="width:7.2%"></i></div><div class="micro" style="margin-top:5px">461</div></td>
+        <td class="r num">2,402</td><td class="r micro hide-m">2024-12</td>
+        <td class="desc hide-m">在任意 Apple Watch 上启用爱马仕表盘</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">13 项合计 42,050 星。前 3 名占 35.4%。「创建」列中划 — 的两项未能获取仓库创建时间（API 额度耗尽），不作推断。</p>
+</section>
+
+<!-- 04 -->
+<section id="s4">
+  <div class="sec-head"><span class="sec-num">04</span><h2>本周新项目 TOP 15</h2></div>
+  <p class="lede">2026-11-16 之后创建、7 天内突破 100 星的仓库共 1,037 个。以下为前 15 名，按 star 排序。</p>
+
+  <div class="rank-list">
+    <div class="rank">
+      <div class="i">01</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/ItsNotRexed/Leonida" target="_blank" rel="noopener">ItsNotRexed<span class="owner">/Leonida</span></a></div>
+        <div class="d">把 Xbox 版 GTA6 静态重编译到 PC · Python · 11-20 创建 · GPL-3.0 · 3 天 14,930 星</div>
+      </div>
+      <div class="v">14,930<span>1,214 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">02</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/bookwjitchieni1986/blender-ai-mcp-addon" target="_blank" rel="noopener">bookwjitchieni1986<span class="owner">/blender-ai-mcp-addon</span></a></div>
+        <div class="d">Blender 的 AI 助手 + MCP server：对话式建模、场景操作、多 agent 工作流 · 11-19 · MIT</div>
+      </div>
+      <div class="v">2,746<span>38 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">03</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/iamajmeena/neonclipping" target="_blank" rel="noopener">iamajmeena<span class="owner">/neonclipping</span></a></div>
+        <div class="d">贴一个链接，两分钟出带字幕的 9:16 切片；本地运行、可接本地 LLM · Python · 11-19</div>
+      </div>
+      <div class="v">2,094<span>119 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">04</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/EL4CTEO/fast-anything" target="_blank" rel="noopener">EL4CTEO<span class="owner">/fast-anything</span></a></div>
+        <div class="d">别用 Rust 重写全部，只重写慢的那 5%：profile Python / Node / Ruby，用 agent 移植热点函数并验证行为一致 · Rust · 11-21</div>
+      </div>
+      <div class="v">1,884<span>111 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">05</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/omonkeyz/xbox-emulator" target="_blank" rel="noopener">omonkeyz<span class="owner">/xbox-emulator</span></a></div>
+        <div class="d">在 PC 上跑 Xbox Series X|S 版本的进展记录（TomBox + rage9）· Rust · 11-21 · GPL-3.0</div>
+      </div>
+      <div class="v">1,310<span>80 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">06</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/R0Y00/Xbox2Windows" target="_blank" rel="noopener">R0Y00<span class="owner">/Xbox2Windows</span></a></div>
+        <div class="d">GTA VI 静态重编译研究：可自编译 EXE，两个着色器已在硬件与 WARP 上比对通过，<b>整游戏启动未验证</b> · 11-20</div>
+      </div>
+      <div class="v">1,303<span>126 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">07</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/Lemxy/WinRust" target="_blank" rel="noopener">Lemxy<span class="owner">/WinRust</span></a></div>
+        <div class="d">用 Rust 重写 Windows shell：任务栏、文件管理器、NTFS 搜索、任务管理器、磁盘清理，一个安装包 · 11-17</div>
+      </div>
+      <div class="v">1,230<span>68 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">08</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/MSNightmare/FastUnlock" target="_blank" rel="noopener">MSNightmare<span class="owner">/FastUnlock</span></a></div>
+        <div class="d">Windows 讲述人（Narrator）锁屏绕过 0day 漏洞 · 11-19 · MIT</div>
+      </div>
+      <div class="v">679<span>110 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">09</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/0xkaka/homeport" target="_blank" rel="noopener">0xkaka<span class="owner">/homeport</span></a></div>
+        <div class="d">无仓库描述 · HTML · 11-17</div>
+      </div>
+      <div class="v">623<span>112 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">10</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/leanprover-community/riemann-hypothesis" target="_blank" rel="noopener">leanprover-community<span class="owner">/riemann-hypothesis</span></a></div>
+        <div class="d">黎曼假设 Lean 形式化的独立对照工具（Alpöge, 2026-11-20）· 11-20</div>
+      </div>
+      <div class="v">619<span>137 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">11</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/nataphong-lab/Open-Source-Face-Recognition-Ultimate" target="_blank" rel="noopener">nataphong-lab<span class="owner">/Open-Source-Face-Recognition-Ultimate</span></a></div>
+        <div class="d">人脸识别全家桶：活体检测、反诈（anti-spoofing）、检测、对齐、比对、属性 · Python · 11-19</div>
+      </div>
+      <div class="v">611<span>503 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">12</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/replit/datacat" target="_blank" rel="noopener">replit<span class="owner">/datacat</span></a></div>
+        <div class="d">自托管可观测性：指标、日志、链路、看板、告警，数据落 PostgreSQL 或 ClickHouse · 11-17</div>
+      </div>
+      <div class="v">557<span>59 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">13</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/CocoSgt/riemann-hypothesis-lean" target="_blank" rel="noopener">CocoSgt<span class="owner">/riemann-hypothesis-lean</span></a></div>
+        <div class="d">上述 Lean 证明的镜像仓库，标注来源 alpo.ge · 11-20</div>
+      </div>
+      <div class="v">512<span>82 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">14</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/INK-Q/agy-fast" target="_blank" rel="noopener">INK-Q<span class="owner">/agy-fast</span></a></div>
+        <div class="d">Google Antigravity 的 MCP 加速插件：声称减少 34% LLM 轮次、31% token 配额 · 11-19</div>
+      </div>
+      <div class="v">511<span>34 forks</span></div>
+    </div>
+    <div class="rank">
+      <div class="i">15</div>
+      <div>
+        <div class="name"><a class="proj" href="https://github.com/realdody/americas-recomp" target="_blank" rel="noopener">realdody<span class="owner">/americas-recomp</span></a></div>
+        <div class="d">无仓库描述 · 11-20 · GPL-2.0 · 同属 GTA 重编译簇</div>
+      </div>
+      <div class="v">507<span>83 forks</span></div>
+    </div>
+  </div>
+  <p class="note">前 15 名合计 30,116 星，其中 GTA / Xbox 重编译簇占 18,050（60%）。第 16–30 名含 75 个仿冒仓库中的 6 个，已在第 08 节单独说明，此处不展示、不链接。</p>
+
+  <div class="callout">
+    <b>一个需要降温的条目。</b>rank 10 与 13 都指向「黎曼假设的 Lean 证明」。仓库本身只是<b>形式化代码与对照工具</b>，作者标注为 Alpöge（2026-11-20）。数学界是否接受这份证明，需要独立审阅，本报告不对其正确性做任何判断；把它当作「本周热门仓库」可以，当作「黎曼假设已被证明」不行。
+  </div>
+</section>
+
+<!-- 05 -->
+<section id="s5">
+  <div class="sec-head"><span class="sec-num">05</span><h2>榜单换血：上周的 11 项去哪了</h2></div>
+  <p class="lede">两个口径都说一遍：本周榜单 13 项里 10 项是新面孔（77%），上周 11 项只留下 3 项（留存率 27%）。这是本报告两期以来最剧烈的一次换血。</p>
+
+  <div class="flow">
+    <div>
+      <h4>上周周榜 · 11 项（数字为上周周增）</h4>
+      <ul>
+        <li class="keep">meta/astryx <span class="g">13,501 → 3,626</span></li>
+        <li class="drop">sherlock-project/sherlock <span class="g">10,412</span></li>
+        <li class="drop">anthropics/skills <span class="g">6,077</span></li>
+        <li class="drop">milind-soni/OpenMausBot <span class="g">5,463</span></li>
+        <li class="drop">google/elephant-goldfish-model <span class="g">5,060</span></li>
+        <li class="keep">we-promise/sure <span class="g">4,556 → 1,771</span></li>
+        <li class="drop">ZhuLinsen/daily_stock_analysis <span class="g">4,548</span></li>
+        <li class="drop">vercel-labs/agent-browser <span class="g">4,217</span></li>
+        <li class="drop">addyosmani/agent-skills <span class="g">3,889</span></li>
+        <li class="drop">google-deepmind/mujoco <span class="g">1,922</span></li>
+        <li class="keep">backnotprop/plannotator <span class="g">1,719 → 2,815</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4>本周周榜 · 13 项（10 项新上榜）</h4>
+      <ul>
+        <li class="new">dream-num/univer <span class="g">6,436</span></li>
+        <li class="new">mvanhorn/last30days-skill <span class="g">4,731</span></li>
+        <li class="new">kajisho5/ffmpeg-skill <span class="g">3,748</span></li>
+        <li class="new">alibaba/open-code-review <span class="g">3,700</span></li>
+        <li class="keep">meta/astryx <span class="g">3,626</span></li>
+        <li class="new">ag-ui-protocol/ag-ui <span class="g">3,620</span></li>
+        <li class="new">GoogleChrome/modern-web-guidance-src <span class="g">3,575</span></li>
+        <li class="keep">backnotprop/plannotator <span class="g">2,815</span></li>
+        <li class="new">google-labs-code/stitch-skills <span class="g">2,683</span></li>
+        <li class="new">tradermonty/claude-trading-skills <span class="g">2,616</span></li>
+        <li class="new">ChromeDevTools/chrome-devtools-mcp <span class="g">2,268</span></li>
+        <li class="keep">we-promise/sure <span class="g">1,771</span></li>
+        <li class="new">pookjw/HermesEnabler <span class="g">461</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">绿色为连续两周在榜，朱红为本期新上榜，灰色删除线为掉榜。astryx 虽掉出「上周名次」的绝对领先，但仍在榜内，属于降温而非消失。</p>
+
+  <div class="callout">
+    <b>怎么看这次换血。</b>不是「新项目变强了」，而是<b>注意力周期变短了</b>。上周榜单均值 5,578 星，本周 3,235 星，总量降三成；同时换手率 77%。两者叠加说明：单周爆发的项目在变多、持续力在变短。对读者的实际影响是——看到榜单就立刻安装，很可能装到一个三周后没人维护的仓库。<b>建议把观察期从「看到就装」改成「连续两周在榜再看」。</b>
+  </div>
+</section>
+
+<!-- 06 -->
+<section id="s6">
+  <div class="sec-head"><span class="sec-num">06</span><h2>月榜变动：谁还在涨</h2></div>
+  <p class="lede">月榜是滚动 30 天窗口，本周窗口为 10.23—11.23。下表两侧数字的口径不同，只用于看方向，不能相减当作真实增量。</p>
+
+  <div class="tbl-scroll">
+  <table>
+    <thead>
+      <tr><th style="width:26px">#</th><th style="width:290px">项目</th><th class="r" style="width:100px">本周月增</th><th class="r" style="width:100px">上周月增</th><th class="r" style="width:82px">方向</th><th class="hide-m">备注</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="num" style="color:var(--muted)">1</td><td><a class="proj" href="https://github.com/pingdotgg/t3code" target="_blank" rel="noopener">pingdotgg<span class="owner">/t3code</span></a></td><td class="r num">41,514</td><td class="r num">33,583</td><td class="r num up">↑ 7,931</td><td class="desc hide-m">连续两期第一，未在周榜出现</td></tr>
+      <tr><td class="num" style="color:var(--muted)">2</td><td><a class="proj" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">cloudflare<span class="owner">/security-audit-skill</span></a></td><td class="r num">39,307</td><td class="r num">43,540</td><td class="r num dn">↓ 4,233</td><td class="desc hide-m">窗口滚动，非减速</td></tr>
+      <tr><td class="num" style="color:var(--muted)">3</td><td><a class="proj" href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">pbakaus<span class="owner">/impeccable</span></a></td><td class="r num">30,634</td><td class="r num">29,631</td><td class="r num up">↑ 1,003</td><td class="desc hide-m">审美赛道唯一仍在月榜的头部</td></tr>
+      <tr><td class="num" style="color:var(--muted)">4</td><td><a class="proj" href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">Nutlope<span class="owner">/hallmark</span></a></td><td class="r num">29,000</td><td class="r num">25,448</td><td class="r num up">↑ 3,552</td><td class="desc hide-m">月榜仍强，但已掉出周榜</td></tr>
+      <tr><td class="num" style="color:var(--muted)">5</td><td><a class="proj" href="https://github.com/milind-soni/OpenMausBot" target="_blank" rel="noopener">milind-soni<span class="owner">/OpenMausBot</span></a></td><td class="r num">21,485</td><td class="r num">—</td><td class="r num" style="color:var(--muted)">新进</td><td class="desc hide-m">给 bot 配一台虚拟机</td></tr>
+      <tr><td class="num" style="color:var(--muted)">6</td><td><a class="proj" href="https://github.com/sherlock-project/sherlock" target="_blank" rel="noopener">sherlock-project<span class="owner">/sherlock</span></a></td><td class="r num">21,408</td><td class="r num">18,371</td><td class="r num up">↑ 3,037</td><td class="desc hide-m">8 年老项目，月榜仍在涨</td></tr>
+      <tr><td class="num" style="color:var(--muted)">7</td><td><a class="proj" href="https://github.com/HKUDS/DeepTutor" target="_blank" rel="noopener">HKUDS<span class="owner">/DeepTutor</span></a></td><td class="r num">19,718</td><td class="r num">18,278</td><td class="r num up">↑ 1,440</td><td class="desc hide-m">AI 家教</td></tr>
+      <tr><td class="num" style="color:var(--muted)">8</td><td><a class="proj" href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener">heygen-com<span class="owner">/hyperframes</span></a></td><td class="r num">18,847</td><td class="r num">20,878</td><td class="r num dn">↓ 2,031</td><td class="desc hide-m">窗口滚动</td></tr>
+      <tr><td class="num" style="color:var(--muted)">9</td><td><a class="proj" href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">thedotmack<span class="owner">/claude-mem</span></a></td><td class="r num">17,416</td><td class="r num">17,038</td><td class="r num up">↑ 378</td><td class="desc hide-m">跨会话记忆</td></tr>
+      <tr><td class="num" style="color:var(--muted)">10</td><td><a class="proj" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">anthropics<span class="owner">/skills</span></a></td><td class="r num">16,473</td><td class="r num">14,332</td><td class="r num up">↑ 2,141</td><td class="desc hide-m">总星 198,997，逼近 20 万</td></tr>
+      <tr><td class="num" style="color:var(--muted)">11</td><td><a class="proj" href="https://github.com/AgriciDaniel/claude-seo" target="_blank" rel="noopener">AgriciDaniel<span class="owner">/claude-seo</span></a></td><td class="r num">12,006</td><td class="r num">10,672</td><td class="r num up">↑ 1,334</td><td class="desc hide-m">SEO skill</td></tr>
+      <tr><td class="num" style="color:var(--muted)">12</td><td><a class="proj" href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank" rel="noopener">elementalsouls<span class="owner">/Claude-BugHunter</span></a></td><td class="r num">11,667</td><td class="r num">—</td><td class="r num" style="color:var(--muted)">新进</td><td class="desc hide-m">外网渗透测试 skill 包，今日仍在日榜</td></tr>
+      <tr><td class="num" style="color:var(--muted)">13</td><td><a class="proj" href="https://github.com/vercel-labs/agent-browser" target="_blank" rel="noopener">vercel-labs<span class="owner">/agent-browser</span></a></td><td class="r num">9,083</td><td class="r num">7,545</td><td class="r num up">↑ 1,538</td><td class="desc hide-m">浏览器自动化 CLI</td></tr>
+      <tr><td class="num" style="color:var(--muted)">14</td><td><a class="proj" href="https://github.com/kajisho5/ffmpeg-skill" target="_blank" rel="noopener">kajisho5<span class="owner">/ffmpeg-skill</span></a></td><td class="r num">7,477</td><td class="r num">—</td><td class="r num" style="color:var(--muted)">新进</td><td class="desc hide-m">周榜第 3，周增占月增 50%</td></tr>
+      <tr><td class="num" style="color:var(--muted)">15</td><td><a class="proj" href="https://github.com/Jakeschincariol/instagram-agent-skill" target="_blank" rel="noopener">Jakeschincariol<span class="owner">/instagram-agent-skill</span></a></td><td class="r num">5,773</td><td class="r num">—</td><td class="r num" style="color:var(--muted)">新进</td><td class="desc hide-m">13 个 skill 运营一个 Instagram 账号</td></tr>
+      <tr><td class="num" style="color:var(--muted)">16</td><td><a class="proj" href="https://github.com/backnotprop/plannotator" target="_blank" rel="noopener">backnotprop<span class="owner">/plannotator</span></a></td><td class="r num">4,793</td><td class="r num">—</td><td class="r num" style="color:var(--muted)">新进</td><td class="desc hide-m">周增占月增 59%，正在加速</td></tr>
+      <tr><td class="num" style="color:var(--muted)">17</td><td><a class="proj" href="https://github.com/google-labs-code/stitch-skills" target="_blank" rel="noopener">google-labs-code<span class="owner">/stitch-skills</span></a></td><td class="r num">3,189</td><td class="r num">—</td><td class="r num" style="color:var(--muted)">新进</td><td class="desc hide-m">周增占月增 84%，本周最热</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">掉出月榜的 3 项：taste-skill（上周 19,546）、video-shotcraft（7,937）、knowledge-work-plugins（6,417）。它们不在本周 17 项之内，可能是增速放缓，也可能是被浏览量更高的新项目挤出榜单尾部——单凭榜单无法区分这两种情况。</p>
+</section>
+
+<!-- 07 -->
+<section id="s7">
+  <div class="sec-head"><span class="sec-num">07</span><h2>五条主线</h2></div>
+  <p class="lede">把本周 13 个周榜项目与 15 个新项目按「解决谁的什么问题」重新切分。</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="ct">主线 A · 职业化</div>
+      <h3>Skill 开始按岗位切分</h3>
+      <p>上周的 skill 在解决「输出不好看」，本周的在解决「替我把活干完」：跨平台调研、视频剪辑、股票分析、代码审查、Instagram 运营。共同特征是都带明确的输入输出契约，而不是风格指令。</p>
+      <p>这也意味着 skill 的评价标准变了：不再看「生成得像不像人做的」，而看「能不能稳定跑完一条业务流程」。</p>
+      <div class="data">5 个 skill 项目 · <b>16,593</b> 星 · 占周榜 <b>39.5%</b></div>
+    </div>
+
+    <div class="card">
+      <div class="ct">主线 B · 官方入场</div>
+      <h3>大厂用官方仓库直接抢分发</h3>
+      <p>阿里、Google Chrome、Google Labs、Meta 同时上榜。官方项目的优势不是技术，而是「不用信任陌生人」——这在 skill 需要 shell 权限的语境下是决定性优势。</p>
+      <p>对应地，第三方封装类项目本周集体消失（上周的 addyosmani/agent-skills 已掉榜）。中间商的窗口正在关闭。</p>
+      <div class="data">5 个官方项目 · <b>15,852</b> 星 · 占周榜 <b>37.7%</b></div>
+    </div>
+
+    <div class="card">
+      <div class="ct">主线 C · 视频链</div>
+      <h3>视频成为 agent 的主要产出形态</h3>
+      <p>ffmpeg-skill（3,748）把 42 个 FFmpeg 工具包成可调用能力；neonclipping（2,094）做「链接进、切片出」；日榜的 autoclip（641）做长视频自动剪辑。三者串起来就是一条完整的选题—剪辑—发布流水线。</p>
+      <p>值得注意的是它们都选择本地运行，而不是调云端 API——成本与隐私是主要动因。</p>
+      <div class="data">周榜 + 新项目 + 日榜 · 合计 <b>6,483</b> 星</div>
+    </div>
+
+    <div class="card">
+      <div class="ct">主线 D · 主机重编译</div>
+      <h3>GTA6 引爆了一个高风险赛道</h3>
+      <p>Leonida 三天 14,930 星，是本期增长最快的项目，也是法律风险最高的。Xbox2Windows 自己都注明「整游戏启动未验证」，但 star 照样破千——说明这类项目的传播动力来自期待，而不是可用性。</p>
+      <p>同类项目在上一期已经出现（Switch 2 模拟器、塞尔达重编译），本期只是换了平台。</p>
+      <div class="data">4 个项目 · <b>18,050</b> 星 · 占新项目前 15 名的 <b>60%</b></div>
+    </div>
+
+    <div class="card">
+      <div class="ct">主线 E · 系统改造</div>
+      <h3>「重写桌面」比「重写应用」更受欢迎</h3>
+      <p>WinRust 用 Rust 重写 Windows shell（任务栏、文件管理器、NTFS 搜索），三天 1,230 星；HermesEnabler 让任意 Apple Watch 用上爱马仕表盘；nospeaker 让 MacBook 触控板「说话」。共同点是改造用户每天都能感知到的界面层。</p>
+      <p>与上一期的「去广告」一脉相承：用户对系统默认体验的不满，仍然是稳定的流量来源。</p>
+      <div class="data">WinRust <b>1,230</b> · HermesEnabler <b>461</b> · 同类改造持续出现</div>
+    </div>
+
+    <div class="card">
+      <div class="ct">主线 F · 反向信号</div>
+      <h3>「别用 Rust 重写」本身成了一个项目</h3>
+      <p>fast-anything（1,884）的主张正好和主线 E 相反：不要整体重写，只把慢的 5% 移植过去，并用测试证明行为一致。它把「渐进式优化」做成了 agent 可执行的流程。</p>
+      <p>同一周里既有「全部重写」也有「只重写 5%」，说明工具链成熟到可以支撑两种路线——这本身是生态变厚的信号。</p>
+      <div class="data">fast-anything <b>1,884</b> 星 · 2 天 · 与前一条形成对照</div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section id="s8">
+  <div class="sec-head"><span class="sec-num">08</span><h2>噪音：75 个仿冒仓库</h2></div>
+  <p class="lede">这是本周最值得写进方法论的一件事：高星新项目榜单可以被批量伪造。</p>
+
+  <div class="callout warn">
+    <b>结论先说。</b>在「7 天内创建、star &gt; 300」的 506 个仓库里，有 75 个属于同一个模板化簇（14.8%）。它们不是开源项目，是黑帽 SEO 的引流页。<b>不要下载、不要执行其中任何文件。</b>本报告不会给出这些仓库的可点击链接。
+  </div>
+
+  <div class="risk">
+    <div class="t">证据一 · 时间<span>01 / TIMING</span></div>
+    <div><p>75 个仓库的创建时间集中在 <code>2026-11-21</code> 同一天。正常的新项目分布不会出现这种单日聚集。</p></div>
+  </div>
+
+  <div class="risk">
+    <div class="t">证据二 · 星数<span>02 / STARS</span></div>
+    <div><p>全部落在 <code>353–366</code> 这个极窄区间内，且 fork 数<b>全部为 0</b>。真实项目的 star 分布是长尾的，且几乎不可能 75 个项目同时零 fork。</p></div>
+  </div>
+
+  <div class="risk">
+    <div class="t">证据三 · 内容<span>03 / CONTENT</span></div>
+    <div>
+      <p>抽查两个仓库（<code>birddebug/cinema-4d-win</code>、<code>Mnowak64/iobit-uninstaller-pro-win</code>），文件列表完全一致：<code>README.md</code>、<code>LICENSE</code>、<code>CHANGELOG.md</code>、<code>docs/</code>，没有任何可执行代码或安装包。</p>
+      <p>README 是同一套模板：「A Windows reference and setup guide for …」+ 一排徽章，指向商业软件的下载引导。</p>
+    </div>
+  </div>
+
+  <div class="risk">
+    <div class="t">证据四 · 命名<span>04 / NAMING</span></div>
+    <div><p>统一以 <code>-win</code> 结尾，覆盖 Cinema 4D、InDesign、AutoCAD、Photoshop、IObit、Total Commander、JetBrains、Figma、Tableau 等商业软件名。命名策略是<b>抢占搜索关键词</b>，不是开发软件。</p></div>
+  </div>
+
+  <div class="callout">
+    <b>为什么这件事重要。</b>它把 star 作为信号的最后一点可信度打穿了：上一期我们还在讨论 star/watcher 比 300 是否异常，这一期直接出现了成本更低的伪造方式——75 个仓库、零代码、统一刷到 350 星，就足以进入「高星新项目」的筛选结果。<br>可操作的防御：<b>只看 star 不够，至少同时看 fork 数、文件构成、创建时间的聚集度。</b>三者同时异常，基本可以判定为噪音。
+  </div>
+</section>
+
+<!-- 09 -->
+<section id="s9">
+  <div class="sec-head"><span class="sec-num">09</span><h2>下周观察</h2></div>
+  <p class="lede">四个可以在 7 天后验证或证伪的判断。</p>
+
+  <div class="findings">
+    <div class="finding">
+      <div class="no">01</div>
+      <div>
+        <h3>GTA 重编译簇会不会继续扩散</h3>
+        <p>本周已有 4 个同主题项目。如果下周出现第 5、第 6 个（尤其是有实质进展的），说明这是新一轮平台重编译潮的开始；如果全部停在「研究 / 进展记录」阶段，那它只是一次话题爆发。<b>可验证指标：同主题新仓库数量、以及是否出现可运行的构建。</b></p>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="no">02</div>
+      <div>
+        <h3>官方 MCP 会不会挤掉第三方封装</h3>
+        <p>本周 5 个官方项目占周榜 37.7%。观察下周是否还有 Chrome、Meta、阿里以外的厂商跟进，以及第三方封装类项目（如上一期的 addyosmani/agent-skills）能否回到榜内。<b>如果连续两周官方占比超过 35%，中间商模式基本可以判定为退潮。</b></p>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="no">03</div>
+      <div>
+        <h3>仿冒簇会被清理吗</h3>
+        <p>75 个仓库目前仍可访问。若 GitHub 在下周批量封禁，说明平台侧有检测能力；若继续存在并扩到其他关键词（如 <code>-mac</code>），则「高星新项目」这个数据源需要长期做清洗。<b>可验证指标：这 75 个仓库的存活数量。</b></p>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="no">04</div>
+      <div>
+        <h3>t3code 能否守住月榜第一</h3>
+        <p>它连续两期月增第一（33,583 → 41,514），但两周都没有出现在周榜。如果下周月增继续上升却仍不进周榜，说明 GitHub 的周榜算法对「已成名项目」有抑制，这会影响所有基于周榜的趋势判断。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <div class="sec-head"><span class="sec-num">10</span><h2>附录</h2></div>
+  <p class="lede">数据文件与复现方式。</p>
+
+  <h3 style="margin-top:20px">A. 数据文件</h3>
+  <p style="font-size:14.5px;color:var(--ink-2);margin:0 0 6px">同目录 <a href="../data/2026-11-23.csv" style="text-decoration:none"><code>data.csv</code></a>，包含周榜 13、日榜 16、月榜 17、新项目 30 共 76 条记录，字段：dataset、rank、repo、stars_period、total_stars、forks、language、created、license、url、note。</p>
+
+  <h3 style="margin-top:26px">B. 复现命令</h3>
+<pre>curl -sL "https://github.com/trending?since=weekly"  -o week.html
+curl -sL "https://github.com/trending?since=daily"   -o day.html
+curl -sL "https://github.com/trending?since=monthly" -o month.html
+
+curl -s "https://api.github.com/search/repositories?q=created:%3E2026-11-16+stars:%3E100&amp;sort=stars&amp;order=desc&amp;per_page=30" \
+  | jq '.total_count, (.items[] | [.full_name, .stargazers_count, .forks_count, .created_at])'</pre>
+
+  <h3 style="margin-top:26px">C. 与上一期的差异</h3>
+  <div class="tbl-scroll">
+  <table>
+    <thead><tr><th style="width:150px">项目</th><th style="width:120px">上一期（月报）</th><th>本期（周报）</th></tr></thead>
+    <tbody>
+      <tr><td class="micro">统计窗口</td><td class="desc">10.16 — 11.16（30 天）</td><td class="desc">11.16 — 11.23（7 天）</td></tr>
+      <tr><td class="micro">主要数据集</td><td class="desc">月榜 14 / 周榜 11 / 新建 864</td><td class="desc">周榜 13 / 日榜 16 / 新建 1,037</td></tr>
+      <tr><td class="micro">新增分析</td><td class="desc">star/watcher 比、fork/star 比</td><td class="desc">周榜留存率、仿冒簇识别</td></tr>
+      <tr><td class="micro">保留结论</td><td class="desc">Agent 生态占据榜单</td><td class="desc">依然成立，但重心从审美转向职能</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">本报告由 WorkBuddy 于 2026-11-23 采集生成。数据可复现，结论为本报告基于上述数据的判断。涉及模拟器、静态重编译、锁屏绕过、表盘解锁的内容仅作趋势记录，不构成使用建议。</p>
+</section>
+
+<footer>
+  <span>GitHub 热门项目周报 · 2026.11.16 — 11.23 · No.02</span>
+  <span>抓取 2026-11-23 08:26 CST · 样本 76 条</span>
+</footer>
+
+</div>
+<a href="../" style="position:fixed;left:16px;bottom:16px;z-index:99;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;background:#17181A;color:#FAF9F6;text-decoration:none;padding:7px 12px;border-radius:2px;opacity:.86">← 返回最新</a>
+</body>
+</html>
